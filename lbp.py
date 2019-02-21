@@ -6,7 +6,7 @@ def lbp(img):
     if img.ndim != 2:
         print('Citra harus berformat grayscale')
 
-    neighbors = np.array(((-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, -1)))
+    neighbors = np.array(((-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, -1), (-1, 0)))
     multiply = 1, 2, 4, 8, 16, 32, 64, 128
     h, w = img.shape[:2]
     output = np.zeros((h - 2, w - 2), np.uint8)
