@@ -23,6 +23,6 @@ stack[:, 200] = 0
 stack[:, 400] = 0
 
 cv2.imshow('LBP', stack)
-# cv2.imwrite('lbp-textures.jpg', stack)
+# cv2.imwrite('lbp-demo-textures.jpg', stack)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
