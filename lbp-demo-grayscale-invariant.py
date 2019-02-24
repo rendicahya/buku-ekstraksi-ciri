@@ -6,13 +6,20 @@ img = cv2.imread('teddy.jpg', 0)
 img = cv2.addWeighted(img, .6, img, 0, 39)
 lbp = feature.local_binary_pattern(img, 8, 1)
 
-inc = 50
+inc = 90
 
 dark = np.where(img >= inc, img - inc, 0)
 dark_lbp = feature.local_binary_pattern(dark, 8, 1)
 
 bright = np.where(img <= 255 - inc, img + inc, 255)
 bright_lbp = feature.local_binary_pattern(bright, 8, 1)
+
+print(np.min(img))
+print(np.max(img))
+print(np.min(dark))
+print(np.max(dark))
+print(np.min(bright))
+print(np.max(bright))
 
 stack = np.hstack((
     np.vstack((img, lbp.astype(np.uint8))),
