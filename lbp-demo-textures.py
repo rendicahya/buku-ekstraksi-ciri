@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from matplotlib import pyplot as plt
 from skimage import feature
 
 img1 = np.zeros((200, 200), np.uint8)
@@ -21,6 +22,9 @@ stack = np.hstack((
 stack[200] = 0
 stack[:, 200] = 0
 stack[:, 400] = 0
+
+plt.hist(lbp3.astype(np.uint8).ravel(), 256, [0, 256])
+plt.show()
 
 cv2.imshow('LBP', stack)
 # cv2.imwrite('lbp-demo-textures.jpg', stack)
