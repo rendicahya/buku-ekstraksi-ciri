@@ -27,6 +27,6 @@ plt.hist(lbp3.astype(np.uint8).ravel(), 256, [0, 256])
 plt.show()
 
 cv2.imshow('LBP', stack)
-# cv2.imwrite('lbp-demo-textures.jpg', stack)
+# cv2.imwrite('demo-textures.jpg', stack)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
