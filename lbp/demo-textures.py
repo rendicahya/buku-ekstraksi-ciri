@@ -10,7 +10,7 @@ lbp1 = feature.local_binary_pattern(img1, 8, 1)
 img2 = np.array([np.full(200, v) for v in range(200)], np.uint8)
 lbp2 = feature.local_binary_pattern(img2, 8, 1)
 
-img3 = cv2.imread('rope.jpg', 0)
+img3 = cv2.imread('../rope.jpg', 0)
 lbp3 = feature.local_binary_pattern(img3, 8, 1)
 
 stack = np.hstack((
@@ -23,7 +23,7 @@ stack[200] = 0
 stack[:, 200] = 0
 stack[:, 400] = 0
 
-plt.hist(lbp3.astype(np.uint8).ravel(), 256, [0, 256])
+plt.hist(lbp3.astype(np.uint8).ravel(), 32, [0, 256])
 plt.show()
 
 cv2.imshow('LBP', stack)
